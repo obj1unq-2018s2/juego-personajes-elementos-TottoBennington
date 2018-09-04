@@ -8,8 +8,7 @@ object luisa {
 
 
 object floki {
-	var arma
-	
+	var property arma = null
 	method encontrar(elemento) {
 	    if (arma.estaCargada()) {
 	        elemento.recibirAtaque(arma.potencia()) 
@@ -37,8 +36,7 @@ object castillo{
 	method recibirAtaque(potenciaArmaEnemiga){defensa -= potenciaArmaEnemiga}
 	method valorQueOtorga() = defensa/5
 	method recibirTrabajo(){
-		//defensa += 20; defensa.min(200)
-		defensa =(defensa+=20).min(200) // dev el min entre def y 200
+		defensa += 20; defensa.min(200)
 	}
 }
 
@@ -51,7 +49,7 @@ object aurora{
 		}
 	}
 	method valorQueOtorga() = 15
-	method recibirTrabajo(){alto+=1}
+	method recibirTrabajo(){}
 }
 
 object tipa{
@@ -59,12 +57,12 @@ object tipa{
 	
 	method recibirAtaque(potenciaArmaEnemiga){}
 	method valorQueOtorga() = alto*2
-	method recibirTrabajo(){}
+	method recibirTrabajo(){alto += 1}
 }
 
 object ballesta{
 	var flechas = 10
-	var potencia = 4
+	var property potencia = 4
 	
 	method estaCargada() = flechas>0
 	method registrarUso(){
@@ -73,7 +71,7 @@ object ballesta{
 }
 object jabalina{
 	var cargada = true
-	var potencia = 30
+	var property potencia = 30
 	
 	method estaCargada() = cargada
 	method registrarUso(){cargada = false}
