@@ -1,6 +1,6 @@
 object luisa {
 	var property personajeActivo = null
-	
+	// personajeActivo = noHayPersonaje
 	method aparece(elemento){
 		personajeActivo.encontrar(elemento)
 	}
