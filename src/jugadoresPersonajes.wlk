@@ -1,6 +1,8 @@
 object luisa {
 	var property personajeActivo = null
-	// personajeActivo = noHayPersonaje
+	method asignarPJ(pjActivo){
+		personajeActivo = pjActivo
+	}
 	method aparece(elemento){
 		personajeActivo.encontrar(elemento)
 	}
@@ -31,12 +33,12 @@ object mario {
 
 object castillo{
 	const property alto = 20 // constante porque no cambia la alt
-	var property defensa = 150
+	var defensa = 150 
 	
 	method recibirAtaque(potenciaArmaEnemiga){defensa -= potenciaArmaEnemiga}
 	method valorQueOtorga() = defensa/5
 	method recibirTrabajo(){
-		defensa += 20; defensa.min(200)
+		defensa = defensa+20.min(200)
 	}
 }
 
